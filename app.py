@@ -8,7 +8,7 @@ import io
 st.set_page_config(page_title="BRScribe - Login", layout="wide")
 
 # --- ROSTO DA EMPRESA (IDENTIDADE VISUAL) ---
-st.title("🚀 BRScribe")
+st.title("BRScribe")
 st.subheader("A sua plataforma de otimização de textos para anúncios")
 st.markdown("---") # Linha divisória para separar a marca do formulário
 
