@@ -3,6 +3,7 @@ import pandas as pd
 import google.generativeai as genai
 import time
 import io
+import requests
 
 # --- CONFIGURAÇÕES DA PÁGINA ---
 st.set_page_config(page_title="BRScribe - Login", layout="wide")
@@ -10,14 +11,17 @@ st.set_page_config(page_title="BRScribe - Login", layout="wide")
 # --- ROSTO DA EMPRESA (IDENTIDADE VISUAL) ---
 st.title("BRScribe")
 st.subheader("A sua plataforma de otimização de textos para anúncios")
-st.markdown("---") # Linha divisória para separar a marca do formulário
+st.markdown("---")
 
-# --- CADEADO DE SEGURANÇA ---
-SENHA_CORRETA = "VENDAS2026" 
+# --- VALIDADOR DINÂMICO DE SENHAS ---
+# Substitua pelo link do arquivo 'senhas.txt' em modo RAW do seu GitHub para ficar 100% automático
+# Por enquanto, mantemos uma lista local segura que você pode expandir
+SENHAS_VALIDAS = ["BRS_m9$kX2!p", "BRS_vA7#zQ9t", "BRS_pL3*mN5x"] 
+
 senha_digitada = st.text_input("🔑 Digite sua Senha de Acesso para começar:", type="password")
 
-if senha_digitada == SENHA_CORRETA:
-    st.success("✅ Bem-vindo ao painel de controle da BRScribe!")
+if senha_digitada in SENHAS_VALIDAS:
+    st.success("✅ Acesso autorizado à plataforma BRScribe!")
     
     # --- CHAVE DA API ---
     api_key = st.text_input("Insira sua Chave de API do Google:", type="password")
