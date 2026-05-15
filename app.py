@@ -13,10 +13,17 @@ st.title("BRScribe")
 st.subheader("A sua plataforma de otimização de textos para anúncios")
 st.markdown("---")
 
-# --- VALIDADOR DINÂMICO DE SENHAS ---
-# Substitua pelo link do arquivo 'senhas.txt' em modo RAW do seu GitHub para ficar 100% automático
-# Por enquanto, mantemos uma lista local segura que você pode expandir
-SENHAS_VALIDAS = ["BRS_m9$kX2!p", "BRS_vA7#zQ9t", "BRS_pL3*mN5x"] 
+# --- VALIDADOR DINÂMICO DE SENHAS (GOOGLE SHEETS) ---
+LINK_DA_PLANILHA_CSV = "COLE_AQUI_O_LINK_DO_PASSO_3"
+
+try:
+    # O código lê a planilha em tempo real direto da nuvem
+    df_senhas = pd.read_csv(https://docs.google.com/spreadsheets/d/e/2PACX-1vSOikx6faAm1unfbbPQNwJgynAiFdbs3rnYyUtj5BMSjF2yYhfbQFWPV8y9r1Emsj3N8VW3_7aEb-yq/pub?output=csv)
+    # Transforma a coluna 'Senha' em uma lista de textos limpos
+    SENHAS_VALIDAS = df_senhas['Senha'].astype(str).str.strip().tolist()
+except:
+    # Caso a internet falhe, mantém uma senha de emergência para você não travar
+    SENHAS_VALIDAS = ["BRS_master_2026!"]
 
 senha_digitada = st.text_input("🔑 Digite sua Senha de Acesso para começar:", type="password")
 
