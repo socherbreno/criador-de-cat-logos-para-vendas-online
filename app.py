@@ -5,11 +5,11 @@ import time
 import io
 
 # --- CONFIGURAÇÕES DA PÁGINA ---
-st.set_page_config(page_title="Portal de Automação Pro", layout="wide")
+st.set_page_config(page_title="BRScribe - Login", layout="wide")
 
 # --- ROSTO DA EMPRESA (IDENTIDADE VISUAL) ---
-st.title("🚀 Nome da Sua Empresa ou Aplicativo") # <--- ESCREVA O SEU NOME AQUI
-st.subheader("Inteligência Artificial para Escala de E-commerce")
+st.title("🚀 BRScribe")
+st.subheader("A sua plataforma de otimização de textos para anúncios")
 st.markdown("---") # Linha divisória para separar a marca do formulário
 
 # --- CADEADO DE SEGURANÇA ---
@@ -17,7 +17,7 @@ SENHA_CORRETA = "VENDAS2026"
 senha_digitada = st.text_input("🔑 Digite sua Senha de Acesso para começar:", type="password")
 
 if senha_digitada == SENHA_CORRETA:
-    st.success("✅ Bem-vindo ao seu painel de controle!")
+    st.success("✅ Bem-vindo ao painel de controle da BRScribe!")
     
     # --- CHAVE DA API ---
     api_key = st.text_input("Insira sua Chave de API do Google:", type="password")
@@ -62,7 +62,7 @@ if senha_digitada == SENHA_CORRETA:
                     
                     progress_bar.progress((index + 1) / total)
 
-                st.success("✅ Processamento finalizado!")
+                st.success("✅ Processamento finalizado com sucesso!")
 
                 # --- EXPORTAÇÃO FORMATADA ---
                 output = io.BytesIO()
@@ -105,4 +105,4 @@ if senha_digitada == SENHA_CORRETA:
                 )
 
 elif senha_digitada != "":
-    st.error("❌ Acesso Negado. Caso não tenha uma senha, entre em contato com o suporte.")
+    st.error("❌ Acesso Negado. Caso não tenha uma senha ativa, entre em contato com o nosso suporte.")
