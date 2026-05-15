@@ -1,4 +1,4 @@
-# ⚡ Gerador de Catálogo Pro para E-commerce
+# ⚡BRS-Gerador de Catálogo Pro para E-commerce
 Ferramenta de automação para gerar títulos e descrições otimizadas e persuasiva para e-commerce.
 ## 🚀 Funcionalidades
 - Leitura automática de ficheiros de dados brutos.
