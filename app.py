@@ -11,21 +11,34 @@ st.set_page_config(page_title="BRScribe - Login", layout="wide")
 # --- ROSTO DA EMPRESA (IDENTIDADE VISUAL) ---
 import streamlit as st
 
-# --- CABEÇALHO COM LOGO E TÍTULO ---
-# Dividimos a tela em duas colunas. A proporção [1, 5] significa que 
-# a coluna 2 é 5 vezes mais larga que a coluna 1.
+import streamlit as st
+import base64
+
+# --- CABEÇALHO COM LOGO REDONDA E TÍTULO ---
 col1, col2 = st.columns([1, 5])
 
 with col1:
-    # O Streamlit vai procurar essa imagem na mesma pasta do código no GitHub.
-    st.image("logobrscribe.png", use_column_width=True)
+    # Lemos o arquivo logo.png do seu GitHub e convertemos para exibição em HTML
+    with open("logo.png", "rb") as image_file:
+        img_base64 = base64.b64encode(image_file.read()).decode()
+    
+    # Injetamos um CSS simples que força o corte em formato de círculo perfeito
+    html_logo = f"""
+    <style>
+    .img-redonda {{
+        border-radius: 50%;
+        width: 100%;
+        max-width: 120px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }}
+    </style>
+    <img src="data:image/png;base64,{img_base64}" class="img-redonda">
+    """
+    st.markdown(html_logo, unsafe_allow_html=True)
 
 with col2:
-    # O título e o subtítulo ficam perfeitamente alinhados ao lado da imagem
     st.title("BRScribe")
     st.markdown("**O Gerador Definitivo de Descrições para E-commerce**")
-
-# ... (aqui continua o resto do seu código com o campo de texto e o prompt) ...
 st.subheader("A sua plataforma de otimização de textos para anúncios")
 st.markdown("---")
 
