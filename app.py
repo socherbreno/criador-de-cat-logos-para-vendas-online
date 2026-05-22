@@ -9,7 +9,23 @@ import requests
 st.set_page_config(page_title="BRScribe - Login", layout="wide")
 
 # --- ROSTO DA EMPRESA (IDENTIDADE VISUAL) ---
-st.title("BRScribe")
+import streamlit as st
+
+# --- CABEÇALHO COM LOGO E TÍTULO ---
+# Dividimos a tela em duas colunas. A proporção [1, 5] significa que 
+# a coluna 2 é 5 vezes mais larga que a coluna 1.
+col1, col2 = st.columns([1, 5])
+
+with col1:
+    # O Streamlit vai procurar essa imagem na mesma pasta do código no GitHub.
+    st.image("logo.png", use_column_width=True)
+
+with col2:
+    # O título e o subtítulo ficam perfeitamente alinhados ao lado da imagem
+    st.title("BRScribe")
+    st.markdown("**O Gerador Definitivo de Descrições para E-commerce**")
+
+# ... (aqui continua o resto do seu código com o campo de texto e o prompt) ...
 st.subheader("A sua plataforma de otimização de textos para anúncios")
 st.markdown("---")
 
