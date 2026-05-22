@@ -56,8 +56,36 @@ if senha_digitada in SENHAS_VALIDAS:
                 total = len(df)
 
                 for index, row in df.iterrows():
-                    prompt = f"Aja como copywriter. Gere TÍTULO (60 chars) e DESCRIÇÃO (bullet points) para: {row['Produto']}, Marca: {row['Marca/Modelo']}, Material: {row['Material']}. Retorne no formato: TÍTULO: [texto] DESCRIÇÃO: [texto]"
-                    
+                    prompt =f"""
+        Você é o copywriter número 1 de e-commerce da América Latina, especialista nos algoritmos da Amazon e do Mercado Livre (SEO, ranqueamento e gatilhos mentais). 
+
+        Sua missão é criar uma descrição de produto altamente detalhada, persuasiva e longa, baseada EXCLUSIVAMENTE nos dados técnicos fornecidos pelo usuário. 
+
+        REGRAS DE OURO (OBRIGATÓRIAS):
+        1. FIDELIDADE ABSOLUTA: Você está PROIBIDO de inventar recursos, dimensões, materiais ou funcionalidades que não estejam nos dados fornecidos. Baseie toda a argumentação apenas no que for real.
+        2. DENSIDADE: A descrição deve ser longa e aprofundada. Explore o benefício por trás de cada característica técnica.
+        3. FORMATO: Siga rigorosamente a estrutura abaixo.
+
+        DADOS TÉCNICOS FORNECIDOS PELO CLIENTE:
+        {dados_do_cliente}
+
+        ESTRUTURA DE SAÍDA EXIGIDA:
+
+        1. TÍTULO OTIMIZADO (SEO)
+        Crie um título chamativo com até 150 caracteres contendo: Produto + Marca + Característica Principal + Modelo.
+
+        2. OS 5 BULLET POINTS (Para Amazon)
+        Crie 5 tópicos matadores detalhando os maiores benefícios do produto. Use emojis profissionais. Comece cada tópico com um benefício em CAIXA ALTA, seguido de uma explicação baseada nos dados técnicos.
+
+        3. DESCRIÇÃO DETALHADA E PERSUASIVA (Para Mercado Livre)
+        Escreva um texto longo (mínimo de 4 parágrafos) usando técnicas de storytelling e copy. 
+        - Parágrafo 1: A fisgada (qual problema o produto resolve?).
+        - Parágrafo 2 e 3: O aprofundamento (como ele resolve, citando os materiais e a engenharia da peça).
+        - Parágrafo 4: A transformação e chamada para ação (Call to Action).
+
+        4. FICHA TÉCNICA (Resumo Rápido)
+        Liste todos os dados técnicos originais em um formato de lista clara para facilitar a leitura dinâmica.
+        """
                     try:
                         response = model.generate_content(prompt)
                         txt = response.text
