@@ -145,3 +145,14 @@ if senha_digitada in SENHAS_VALIDAS:
 
 elif senha_digitada != "":
     st.error("❌ Acesso Negado. Caso não tenha uma senha ativa, entre em contato com o nosso suporte.")
+# --- RODAPÉ DE SUPORTE ---
+st.divider() # Cria uma linha horizontal fina e elegante para separar o conteúdo
+
+# Adiciona o texto centralizado com um link clicável que abre o e-mail do cliente automaticamente
+rodape = """
+<div style="text-align: center; color: #888888; margin-top: 20px;">
+    <p>💬 Precisa de ajuda ou encontrou algum problema?</p>
+    <p>Entre em contato com o nosso suporte: <a href="mailto:brsenterprisesof28@gmail.com" style="color: #4CAF50; text-decoration: none; font-weight: bold;">brsenterprisesof28@gmail.com</a></p>
+</div>
+"""
+st.markdown(rodape, unsafe_allow_html=True)
