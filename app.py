@@ -18,7 +18,7 @@ LINK_DA_PLANILHA_CSV = "COLE_AQUI_O_LINK_DO_PASSO_3"
 
 try:
     # O código lê a planilha em tempo real direto da nuvem
-    df_senhas = pd.read_csv(https://docs.google.com/spreadsheets/d/e/2PACX-1vSOikx6faAm1unfbbPQNwJgynAiFdbs3rnYyUtj5BMSjF2yYhfbQFWPV8y9r1Emsj3N8VW3_7aEb-yq/pub?output=csv)
+    df_senhas = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSOikx6faAm1unfbbPQNwJgynAiFdbs3rnYyUtj5BMSjF2yYhfbQFWPV8y9r1Emsj3N8VW3_7aEb-yq/pub?output=csv")
     # Transforma a coluna 'Senha' em uma lista de textos limpos
     SENHAS_VALIDAS = df_senhas['Senha'].astype(str).str.strip().tolist()
 except:
