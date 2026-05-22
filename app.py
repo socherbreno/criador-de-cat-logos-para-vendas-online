@@ -18,8 +18,8 @@ import base64
 col1, col2 = st.columns([1, 5])
 
 with col1:
-    # Lemos o arquivo logo.png do seu GitHub e convertemos para exibição em HTML
-    with open("logo.png", "rb") as image_file:
+    # Lemos o arquivo logobrscribe.png do seu GitHub e convertemos para exibição em HTML
+    with open("logobrscribe.png", "rb") as image_file:
         img_base64 = base64.b64encode(image_file.read()).decode()
     
     # Injetamos um CSS simples que força o corte em formato de círculo perfeito
