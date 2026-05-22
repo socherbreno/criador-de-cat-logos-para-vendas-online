@@ -18,7 +18,7 @@ col1, col2 = st.columns([1, 5])
 
 with col1:
     # O Streamlit vai procurar essa imagem na mesma pasta do código no GitHub.
-    st.image("logo.png", use_column_width=True)
+    st.image("logobrscribe.png", use_column_width=True)
 
 with col2:
     # O título e o subtítulo ficam perfeitamente alinhados ao lado da imagem
