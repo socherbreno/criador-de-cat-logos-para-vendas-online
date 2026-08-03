@@ -96,7 +96,7 @@ if senha_digitada in SENHAS_VALIDAS:
         3. FORMATO: Siga rigorosamente a estrutura abaixo.
 
         DADOS TÉCNICOS FORNECIDOS PELO CLIENTE:
-        {dados_do_cliente}
+            {dados_do_cliente}
 
         ESTRUTURA DE SAÍDA EXIGIDA:
 
